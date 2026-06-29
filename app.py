@@ -745,7 +745,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 </body>
 </html>"""
 
-# Streamlit app - FIXED for black screen issue
+# Streamlit app - FIXED for display issue
 st.set_page_config(
     page_title="Jhanvi Jyant — Design Portfolio",
     page_icon="🎨",
@@ -764,14 +764,18 @@ st.markdown("""
         .st-emotion-cache-6qob1r {background: #F5EFE4;}
         .st-emotion-cache-1r6slb0 {background: #F5EFE4;}
         .st-emotion-cache-1v0mbdj {background: #F5EFE4;}
-        iframe {border: none !important; margin: 0 !important; padding: 0 !important;}
+        iframe {border: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
         .st-emotion-cache-13ln4jf {padding: 0 !important;}
+        .st-emotion-cache-1jicfl2 {padding: 0 !important;}
+        .st-emotion-cache-1v0mbdj {padding: 0 !important;}
+        .element-container {padding: 0 !important; margin: 0 !important;}
     </style>
 """, unsafe_allow_html=True)
 
-# Render the HTML with full height
+# Render the HTML with dynamic height
 st.components.v1.html(
     html_code,
-    height=10000,  # Tall enough to show all content
-    scrolling=True
+    height=8000,  # Large enough for all content
+    scrolling=True,
+    width="100%"
 )
