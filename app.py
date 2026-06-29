@@ -1,4 +1,7 @@
-import streamlit as st
+from flask import Flask, send_file
+import io
+
+app = Flask(__name__)
 
 html_code = """<!DOCTYPE html>
 <html lang="en">
@@ -363,6 +366,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
   <span class="sec-tag">Visual work</span>
   <h2 class="sec-title">Brand, social &<br><em>poster design.</em></h2>
   <p class="sec-intro">A personal brand system built and applied across formats — logo, identity board, social posts, a poster, and a real interface redesign.</p>
+  
   <div class="gal-block">
     <div class="gal-label">Logo System</div>
     <div class="gal-row">
@@ -391,6 +395,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
       </svg>
     </div>
   </div>
+
   <div class="gal-block">
     <div class="gal-label">Brand Board</div>
     <div class="gal-row">
@@ -421,6 +426,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
       </svg>
     </div>
   </div>
+
   <div class="gal-block">
     <div class="gal-label">Instagram Post Design — CyberSec Launch</div>
     <div class="gal-row">
@@ -457,6 +463,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
       </svg>
     </div>
   </div>
+
   <div class="gal-block">
     <div class="gal-label">Poster — AI Resume Analyser</div>
     <div class="gal-row">
@@ -482,6 +489,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
       </svg>
     </div>
   </div>
+
   <div class="gal-block">
     <div class="gal-label">Before / After — Dashboard Redesign</div>
     <div class="gal-row">
@@ -571,6 +579,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
   <span class="sec-tag">Case Studies</span>
   <h2 class="sec-title">Full-stack products,<br><em>end-to-end design.</em></h2>
   <p class="sec-intro">Three comprehensive projects where I served as the sole UI designer and frontend engineer, ensuring a seamless bridge between identity and execution.</p>
+
   <div class="proj-grid">
     <div class="proj-card">
       <div class="proj-visual">
@@ -600,6 +609,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
         <div class="proj-tags"><span class="ptag">AI Workflows</span><span class="ptag">Clean UI</span></div>
       </div>
     </div>
+
     <div class="proj-card">
       <div class="proj-visual">
         <svg width="100%" height="100%" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -626,6 +636,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
         <div class="proj-tags"><span class="ptag">User Testing</span><span class="ptag">Tool Design</span><span class="ptag">Security UX</span></div>
       </div>
     </div>
+
     <div class="proj-card">
       <div class="proj-visual">
         <svg width="100%" height="100%" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -664,6 +675,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 <section class="experience" id="experience">
   <span class="sec-tag">Journey</span>
   <h2 class="sec-title">Work history &<br><em>creative footprints.</em></h2>
+  
   <div class="exp-list">
     <div class="exp-item">
       <div class="exp-date-col">
@@ -678,6 +690,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
         </ul>
       </div>
     </div>
+
     <div class="exp-item">
       <div class="exp-date-col">
         <div class="exp-date">2023 — 2024</div>
@@ -718,6 +731,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 <section class="footer-cta" id="contact">
   <h2>Let's build spaces that<br><em>feel completely alive.</em></h2>
   <p>Currently searching for a Graphic Design Internship position at Canva. Let's create intentional visual frameworks together.</p>
+  
   <div class="footer-links">
     <a href="mailto:jhanvijyant15201@gmail.com" class="f-link primary">Get in touch via email</a>
     <a href="https://linkedin.com/in/jhanvi-jyant" target="_blank" rel="noopener" class="f-link secondary">View LinkedIn profile</a>
@@ -745,37 +759,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 </body>
 </html>"""
 
-# Streamlit app - FIXED for display issue
-st.set_page_config(
-    page_title="Jhanvi Jyant — Design Portfolio",
-    page_icon="🎨",
-    layout="wide"
-)
+@app.route('/')
+def home():
+    return html_code
 
-# Remove all Streamlit default UI elements
-st.markdown("""
-    <style>
-        #MainMenu {visibility: hidden;}
-        header {visibility: hidden;}
-        footer {visibility: hidden;}
-        .stApp {margin: 0; padding: 0; background: #F5EFE4;}
-        .stApp > header {display: none;}
-        .stApp > div {padding: 0;}
-        .st-emotion-cache-6qob1r {background: #F5EFE4;}
-        .st-emotion-cache-1r6slb0 {background: #F5EFE4;}
-        .st-emotion-cache-1v0mbdj {background: #F5EFE4;}
-        iframe {border: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
-        .st-emotion-cache-13ln4jf {padding: 0 !important;}
-        .st-emotion-cache-1jicfl2 {padding: 0 !important;}
-        .st-emotion-cache-1v0mbdj {padding: 0 !important;}
-        .element-container {padding: 0 !important; margin: 0 !important;}
-    </style>
-""", unsafe_allow_html=True)
-
-# Render the HTML with dynamic height
-st.components.v1.html(
-    html_code,
-    height=8000,  # Large enough for all content
-    scrolling=True,
-    width="100%"
-)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
