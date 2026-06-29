@@ -38,11 +38,10 @@
 
 ## 📊 GitHub Stats
 
-![](https://github-readme-stats.vercel.app/api?username=jhanvijant&show_icons=true&theme=tokyonight)
-
-![](https://github-readme-streak-stats.herokuapp.com/?user=jhanvijant&theme=tokyonight)
-
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=jhanvijant&layout=compact&theme=tokyonight)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=jhanvijyant&show_icons=true&theme=tokyonight&hide_border=true" height="150"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jhanvijyant&layout=compact&theme=tokyonight&hide_border=true" height="150"/>
+</p>
 
 ---
 
