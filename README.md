@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Jhanvi Jyant</h1>
+<h1 align="center">Hey 👋, I'm Jhanvi Jyant</h1>
 
 <h3 align="center">Cybersecurity Enthusiast | Graphics  Designer | Frontend Developer</h3>
 
@@ -10,15 +10,15 @@
 
 ## 👩‍💻 About Me
 
-🎓 B.Tech CSE Student at **VIT Bhopal**
+ B.Tech CSE Student at **VIT Bhopal**
 
-🔐 Passionate about **Cybersecurity**
+ Passionate about **Cybersecurity**
 
-🎨 Love creating beautiful user interfaces.
+ Love creating beautiful user interfaces.
 
-💻 Learning Full Stack Development.
+Learning Full Stack Development.
 
-🌱 Currently exploring
+ Currently exploring
 - React
 - Tailwind CSS
 - Ethical Hacking
@@ -36,7 +36,7 @@
 
 ---
 
-## 📊 GitHub Stats
+##  GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=jhanvijyant&show_icons=true&theme=tokyonight&hide_border=true" height="150"/>
@@ -49,7 +49,7 @@
 
 - 💼 LinkedIn: YOUR_LINK
 - 🌐 Portfolio: https://jhanvijant.github.io/portfolio/
-- 📧 Email: your@email.com
+- 📧 Email: jhanvijyant15201@gmail.com
 
 ---
 
