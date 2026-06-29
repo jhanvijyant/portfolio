@@ -3,7 +3,7 @@
 <h3 align="center">Cybersecurity Enthusiast | Graphics  Designer | Frontend Developer</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Cybersecurity+Learner;Frontend+Developer;UI%2FUX+Designer;Always+Learning+🚀">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Cybersecurity+Learner;Frontend+Developer;Graphi+Designer;Always+Learning">
 </p>
 
 ---
