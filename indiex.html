@@ -1,9 +1,4 @@
-from flask import Flask, send_file
-import io
-
-app = Flask(__name__)
-
-html_code = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -29,6 +24,7 @@ html_code = """<!DOCTYPE html>
   --serif:     'Cormorant Garamond', Georgia, serif;
   --sans:      'DM Sans', system-ui, sans-serif;
   
+  /* Premium Additions: Subtle Awwwards Shadows & Timings */
   --shadow-sm: 0 4px 20px rgba(42, 31, 23, 0.03);
   --shadow-md: 0 12px 34px rgba(122, 59, 30, 0.06);
   --shadow-lg: 0 24px 60px rgba(122, 59, 30, 0.12);
@@ -46,9 +42,9 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
 }
 
+/* ── PREMIUM INTERACTION & ANIMATION OVERLAYS ── */
 @keyframes fadeInSlideUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
@@ -60,6 +56,7 @@ body {
   100% { transform: translate(0, 0) scale(1); }
 }
 
+/* ── PREMIUM NAVIGATION SYSTEM ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -93,9 +90,11 @@ nav {
 .nav-links a:hover { color: var(--amber); }
 .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
 
+/* Elegant Mobile Menu Button (Hamburger Alternative) */
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 110; }
 .menu-toggle span { display: block; width: 22px; height: 1.5px; background: var(--sienna); margin: 5px 0; transition: var(--transition-micro); }
 
+/* ── HERO SECTION ── */
 .hero {
   min-height: 100vh; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center;
   padding: 8rem 4rem 4rem; gap: 6rem; position: relative; overflow: hidden;
@@ -116,6 +115,7 @@ nav {
 .hero h1 em { font-style: italic; color: var(--amber); font-weight: 400; }
 .hero-sub { font-size: 16px; color: var(--ink-2); margin-top: 2rem; max-width: 460px; line-height: 1.8; opacity: 0.9; }
 
+/* Premium Elevated Button Architecture */
 .hero-cta { 
   display: inline-flex; align-items: center; gap: 12px; margin-top: 2.75rem; padding: 15px 34px; 
   background: var(--amber); color: var(--white); border-radius: 100px; font-size: 13px; font-weight: 500; 
@@ -132,9 +132,14 @@ nav {
   box-shadow: var(--shadow-sm); transition: var(--transition-smooth); 
 }
 .stat-card:hover { transform: translateY(-4px) translateX(4px); box-shadow: var(--shadow-md); border-color: var(--rose-lt); }
+.stat-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.stat-icon.a { background: var(--rose-lt); }
+.stat-icon.b { background: #EEF0D8; }
+.stat-icon.c { background: #D8EAF0; }
 .stat-num { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--sienna); line-height: 1; }
 .stat-lbl { font-size: 12px; color: var(--ink-2); opacity: 0.6; margin-top: 4px; letter-spacing: 0.01em; }
 
+/* ── SECTION COMMON METRICS ── */
 section { padding: 8rem 4rem; position: relative; }
 .sec-tag { 
   display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; 
@@ -145,6 +150,7 @@ section { padding: 8rem 4rem; position: relative; }
 .sec-title em { font-style: italic; color: var(--amber); font-weight: 400; }
 .sec-intro { font-size: 15.5px; color: var(--ink-2); max-width: 540px; margin-top: 1.5rem; line-height: 1.75; opacity: 0.85; }
 
+/* ── VISUAL GALLERY (PREMIUM GRID PATTERN) ── */
 .gallery { background: var(--white); }
 .gal-block { margin-top: 5rem; }
 .gal-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-dk); margin-bottom: 1.5rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
@@ -152,7 +158,9 @@ section { padding: 8rem 4rem; position: relative; }
 .gal-row { display: flex; gap: 2rem; flex-wrap: wrap; align-items: stretch; }
 .gal-row svg { border-radius: 16px; display: block; height: auto; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
 .gal-row svg:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.gal-row.center { justify-content: center; }
 
+/* ── ABOUT SECTION ── */
 .about { background: var(--linen); }
 .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 6rem; align-items: start; margin-top: 4.5rem; }
 .about-quote { 
@@ -171,6 +179,7 @@ section { padding: 8rem 4rem; position: relative; }
 }
 .contact-pill:hover { background: var(--rose-lt); border-color: var(--rose); color: var(--sienna); transform: translateY(-2px); }
 
+/* ── SKILLS ── */
 .skills { background: var(--white); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 4.5rem; }
 .skill-tile { 
@@ -184,10 +193,12 @@ section { padding: 8rem 4rem; position: relative; }
 }
 .skill-tile:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--rose); }
 .skill-tile:hover::after { transform: translate(15%, 15%) scale(1.2); opacity: 0.6; }
+.skill-tile-icon { font-size: 28px; margin-bottom: 1.25rem; }
 .skill-tile-name { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--sienna); margin-bottom: 1rem; }
 .skill-list { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 2; }
 .sk { font-size: 11.5px; padding: 4px 12px; background: var(--white); color: var(--ink-2); border-radius: 100px; border: 1px solid rgba(237, 228, 213, 0.9); font-weight: 400; }
 
+/* ── PROJECTS (AWWWARDS EDITION + PERFECT MATCH FIXED OVERFLOW) ── */
 .projects { background: var(--sienna); position: relative; }
 .projects .sec-tag { color: var(--rose-lt); border-color: rgba(240, 216, 204, 0.3); background: rgba(255,255,255,0.05); }
 .projects .sec-title { color: var(--white); }
@@ -201,21 +212,22 @@ section { padding: 8rem 4rem; position: relative; }
 }
 .proj-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); box-shadow: var(--shadow-lg); }
 
+/* CRITICAL BUG FIX ARCHITECTURE FOR PROJECT VECTOR ARTWORKS */
 .proj-visual { 
   position: relative; 
   width: 100%; 
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10; /* Dynamic modern layout container proportion replacing hardcoded metrics */
   background: rgba(42, 31, 23, 0.2); 
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  padding: 1.5rem;
-  overflow: visible !important;
+  padding: 1.5rem; /* Generous micro padding parameters allows nested SVG vector boundaries to breathe safely */
+  overflow: visible !important; /* Forces bounding container structures to let path outlines layer flawlessly without standard browser truncation */
 }
 .proj-visual svg {
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;
+  object-fit: contain; /* Fluid scalable parameters mirroring premium responsive viewport handling */
 }
 
 .proj-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
@@ -225,6 +237,7 @@ section { padding: 8rem 4rem; position: relative; }
 .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .ptag { font-size: 10px; font-weight: 500; padding: 4px 12px; border-radius: 100px; background: rgba(212,144,122,0.15); color: var(--rose-lt); border: 1px solid rgba(212,144,122,0.25); letter-spacing: 0.04em; }
 
+/* ── EXPERIENCE SECTION ── */
 .experience { background: var(--white); }
 .exp-list { margin-top: 4.5rem; display: flex; flex-direction: column; }
 .exp-item { 
@@ -234,6 +247,7 @@ section { padding: 8rem 4rem; position: relative; }
 .exp-item:first-child { padding-top: 0; }
 .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
 .exp-item:hover { transform: translateX(10px); }
+.exp-date-col { padding-top: 4px; }
 .exp-date { font-size: 13px; font-weight: 500; color: var(--ink-2); opacity: 0.5; letter-spacing: 0.04em; }
 .exp-company { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--amber); margin-top: 6px; }
 .exp-role-title { font-family: var(--serif); font-size: 24px; font-weight: 300; color: var(--sienna); letter-spacing: -0.01em; }
@@ -241,6 +255,7 @@ section { padding: 8rem 4rem; position: relative; }
 .exp-bullets li { font-size: 14.5px; color: var(--ink-2); padding-left: 1.75rem; position: relative; line-height: 1.7; }
 .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--rose); font-weight: bold; }
 
+/* ── CERTIFICATIONS ── */
 .certs { background: var(--linen); }
 .certs-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 4.5rem; }
 .cert-card { 
@@ -255,6 +270,7 @@ section { padding: 8rem 4rem; position: relative; }
 .cert-name { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.4; }
 .cert-issuer { font-size: 12px; color: var(--ink-2); opacity: 0.5; margin-top: 3px; }
 
+/* ── PREMIUM PREMIUM FOOTER / CTA ── */
 .footer-cta { 
   background: var(--amber); padding: 9rem 4rem; text-align: center; position: relative; overflow: hidden; 
 }
@@ -282,6 +298,7 @@ section { padding: 8rem 4rem; position: relative; }
   border-top: 1px solid rgba(253, 250, 246, 0.05); letter-spacing: 0.02em;
 }
 
+/* ── PREMIUM RESPONSIVE SYSTEMS ── */
 @media (max-width: 1024px) {
   .hero { gap: 3rem; }
   .about-grid { gap: 3rem; }
@@ -294,6 +311,8 @@ section { padding: 8rem 4rem; position: relative; }
 @media (max-width: 768px) {
   nav { padding: 1.25rem 2rem; }
   .menu-toggle { display: block; }
+  
+  /* Modern Clean Mobile Overlay Menu */
   .nav-links { 
     position: fixed; top: 0; right: 0; bottom: 0; width: 280px; 
     background: var(--white); box-shadow: var(--shadow-lg); padding: 6rem 2rem 2rem; 
@@ -303,6 +322,8 @@ section { padding: 8rem 4rem; position: relative; }
   .nav-links.active { transform: translateX(0); }
   .nav-links li { margin-left: 0; margin-bottom: 2rem; }
   .nav-links a { font-size: 14px; }
+  
+  /* Smooth transform state for active hamburger */
   .nav-links.active ~ .menu-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav-links.active ~ .menu-toggle span:nth-child(2) { opacity: 0; }
   .nav-links.active ~ .menu-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
@@ -323,6 +344,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 </style>
 </head>
 <body>
+
 <nav>
   <a href="#home" class="nav-logo">Jhanvi Jyant</a>
   <ul class="nav-links" id="navLinks">
@@ -357,6 +379,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
       <div><div class="stat-num">35%</div><div class="stat-lbl">UX efficiency gain, StegaVision</div></div>
     </div>
     <div class="stat-card">
+      
       <div><div class="stat-num">AI+</div><div class="stat-lbl">Prompt-engineered creative workflows</div></div>
     </div>
   </div>
@@ -366,7 +389,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
   <span class="sec-tag">Visual work</span>
   <h2 class="sec-title">Brand, social &<br><em>poster design.</em></h2>
   <p class="sec-intro">A personal brand system built and applied across formats — logo, identity board, social posts, a poster, and a real interface redesign.</p>
-  
+
   <div class="gal-block">
     <div class="gal-label">Logo System</div>
     <div class="gal-row">
@@ -533,7 +556,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
   <span class="sec-tag">About me</span>
   <h2 class="sec-title">Creative mind,<br><em>technical hands.</em></h2>
   <div class="about-grid">
-    <div class="about-quote">"I don't just design screens — I design the feeling you get when you land on one."</div>
+    <div class="about-quote">
+      "I don't just design screens — I design the feeling you get when you land on one."
+    </div>
     <div class="about-body">
       <p>I'm a B.Tech Computer Science undergraduate at VIT Bhopal, specialising in Cybersecurity — but my heart has always lived in design. I fell in love with the way a single font choice or a deliberate colour palette can completely shift how something feels.</p>
       <p>I've spent the past two years building full-stack products where I owned both the code and the visual language — every layout, every motion, every micro-interaction was a deliberate decision. My technical background means I can actually build what I design, not just hand off mockups.</p>
@@ -553,23 +578,38 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
   <h2 class="sec-title">Design skills &<br><em>creative tools.</em></h2>
   <div class="skills-grid">
     <div class="skill-tile">
-      <div class="skill-tile-name">Visual Design</div>
+      <div>
+    
+        <div class="skill-tile-name">Visual Design</div>
+      </div>
       <div class="skill-list"><span class="sk">Typography</span><span class="sk">Color Theory</span><span class="sk">Layout</span><span class="sk">Mood-boarding</span><span class="sk">Brand Identity</span><span class="sk">Style Guides</span></div>
     </div>
     <div class="skill-tile">
-      <div class="skill-tile-name">UI / UX</div>
+      <div>
+    
+        <div class="skill-tile-name">UI / UX</div>
+      </div>
       <div class="skill-list"><span class="sk">Figma</span><span class="sk">Wireframing</span><span class="sk">Prototyping</span><span class="sk">User Flows</span><span class="sk">Responsive Design</span></div>
     </div>
     <div class="skill-tile">
-      <div class="skill-tile-name">Frontend</div>
+      <div>
+   
+        <div class="skill-tile-name">Frontend</div>
+      </div>
       <div class="skill-list"><span class="sk">HTML/CSS</span><span class="sk">JavaScript</span><span class="sk">React</span><span class="sk">Bootstrap 5</span></div>
     </div>
     <div class="skill-tile">
-      <div class="skill-tile-name">AI Creative</div>
+      <div>
+  
+        <div class="skill-tile-name">AI Creative</div>
+      </div>
       <div class="skill-list"><span class="sk">Gemini AI</span><span class="sk">Prompt Engineering</span><span class="sk">AI Image Gen</span></div>
     </div>
     <div class="skill-tile">
-      <div class="skill-tile-name">Tools</div>
+      <div>
+      
+        <div class="skill-tile-name">Tools</div>
+      </div>
       <div class="skill-list"><span class="sk">Canva</span><span class="sk">Adobe Illustrator</span></div>
     </div>
   </div>
@@ -584,7 +624,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
     <div class="proj-card">
       <div class="proj-visual">
         <svg width="100%" height="100%" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C8763A"/><stop offset="100%" stop-color="#7A3B1E"/></linearGradient></defs>
+          <defs>
+            <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C8763A"/>
+              <stop offset="100%" stop-color="#7A3B1E"/>
+            </linearGradient>
+          </defs>
           <rect width="400" height="220" rx="16" fill="url(#cyberGrad)" opacity="0.15"/>
           <rect x="40" y="30" width="320" height="160" rx="16" fill="#2A1F17" stroke="rgba(212,144,122,0.3)" stroke-width="2"/>
           <rect x="40" y="30" width="320" height="35" rx="16" fill="#3A2A1F"/>
@@ -606,7 +651,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
           <div class="proj-stack">UI Design · React · Gemini API</div>
           <p class="proj-desc">A conversational interface designed to explain complex network vulnerabilities in plain English. Transformed intimidating CLI outputs into friendly, human-readable visual layouts.</p>
         </div>
-        <div class="proj-tags"><span class="ptag">AI Workflows</span><span class="ptag">Clean UI</span></div>
+        <div class="proj-tags">
+          <span class="ptag">AI Workflows</span>
+          <span class="ptag">Clean UI</span>
+        </div>
       </div>
     </div>
 
@@ -633,7 +681,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
           <div class="proj-stack">Product Design · Python · UI Architect</div>
           <p class="proj-desc">An image steganography platform. Stripped away technical overhead to achieve a clean drag-and-drop tool, yielding a verified 35% user efficiency improvement over existing open-source variants.</p>
         </div>
-        <div class="proj-tags"><span class="ptag">User Testing</span><span class="ptag">Tool Design</span><span class="ptag">Security UX</span></div>
+        <div class="proj-tags">
+          <span class="ptag">User Testing</span>
+          <span class="ptag">Tool Design</span>
+          <span class="ptag">Security UX</span>
+        </div>
       </div>
     </div>
 
@@ -642,7 +694,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
         <svg width="100%" height="100%" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <rect width="400" height="220" rx="16" fill="#D4907A" opacity="0.15"/>
           <g transform="translate(60, 25)">
-            <rect width="130" height="170" rx="8" fill="#FDFAF6"/>
+            <rect width="130" height="170" rx="8" fill="#FDFAF6" box-shadow="0 4px 12px rgba(0,0,0,0.1)"/>
             <rect x="15" y="20" width="45" height="10" rx="2" fill="#7A3B1E"/>
             <circle cx="105" cy="25" r="10" fill="#EEF0D8"/>
             <line x1="15" y1="45" x2="115" y2="45" stroke="#EDE4D5" stroke-width="2"/>
@@ -666,7 +718,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
           <div class="proj-stack">Visual Language · Full-Stack React</div>
           <p class="proj-desc">An interactive platform providing parsing metrics for student resumes. Replaced raw data structures with clean color-coded score circles and dynamic, contextual action panels.</p>
         </div>
-        <div class="proj-tags"><span class="ptag">Dashboard UI</span><span class="ptag">Frontend Engineering</span><span class="ptag">Data Visualization</span></div>
+        <div class="proj-tags">
+          <span class="ptag">Dashboard UI</span>
+          <span class="ptag">Frontend Engineering</span>
+          <span class="ptag">Data Visualization</span>
+        </div>
       </div>
     </div>
   </div>
@@ -740,15 +796,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
 
 <footer class="footer-bottom">
   <div>© 2026 Jhanvi Jyant. All rights reserved. Handcrafted with precision.</div>
+
 </footer>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
+    
+    // Toggle Mobile Navigation Overlay cleanly
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // Close Menu on Link Click for slick one-page UX transition
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -756,12 +817,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline
     });
   });
 </script>
+
 </body>
-</html>"""
-
-@app.route('/')
-def home():
-    return html_code
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+</html>
