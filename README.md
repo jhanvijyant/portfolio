@@ -1,2 +1,57 @@
-# portfolio
-I'm a B.Tech Computer Science undergraduate at VIT Bhopal, specialising in Cybersecurity — but my heart has always lived in design. I fell in love with the way a single font choice or a deliberate colour palette can completely shift how something feels. 
+<h1 align="center">Hi 👋, I'm Jhanvi Jyant</h1>
+
+<h3 align="center">Cybersecurity Enthusiast | UI/UX Designer | Frontend Developer</h3>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Cybersecurity+Learner;Frontend+Developer;UI%2FUX+Designer;Always+Learning+🚀">
+</p>
+
+---
+
+## 👩‍💻 About Me
+
+🎓 B.Tech CSE Student at **VIT Bhopal**
+
+🔐 Passionate about **Cybersecurity**
+
+🎨 Love creating beautiful user interfaces.
+
+💻 Learning Full Stack Development.
+
+🌱 Currently exploring
+- React
+- Tailwind CSS
+- Ethical Hacking
+- Python
+
+---
+
+## 🛠 Tech Stack
+
+<p>
+
+<img src="https://skillicons.dev/icons?i=html,css,js,react,python,java,c,cpp,git,github,vscode,figma"/>
+
+</p>
+
+---
+
+## 📊 GitHub Stats
+
+![](https://github-readme-stats.vercel.app/api?username=jhanvijant&show_icons=true&theme=tokyonight)
+
+![](https://github-readme-streak-stats.herokuapp.com/?user=jhanvijant&theme=tokyonight)
+
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=jhanvijant&layout=compact&theme=tokyonight)
+
+---
+
+## 🌐 Connect with Me
+
+- 💼 LinkedIn: YOUR_LINK
+- 🌐 Portfolio: https://jhanvijant.github.io/portfolio/
+- 📧 Email: your@email.com
+
+---
+
+⭐ Thanks for visiting my profile!
