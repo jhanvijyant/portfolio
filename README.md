@@ -3,7 +3,7 @@
 <h3 align="center">Cybersecurity Enthusiast | Graphics  Designer | Frontend Developer</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Cybersecurity+Learner;Frontend+Developer;Graphi+Designer;Always+Learning">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&color=FF69B4&center=true&vCenter=true&width=650&lines=Welcome+to+my+GitHub!;Cybersecurity+Learner;Frontend+Developer;Graphic+Designer;Always+Learning">
 </p>
 
 ---
@@ -47,10 +47,8 @@ Learning Full Stack Development.
 
 ## 🌐 Connect with Me
 
-- 💼 LinkedIn: YOUR_LINK
+- 💼 LinkedIn:https://www.linkedin.com/in/jhanvi-jyant-26934b291/
 - 🌐 Portfolio: https://jhanvijant.github.io/portfolio/
 - 📧 Email: jhanvijyant15201@gmail.com
 
 ---
-
-⭐ Thanks for visiting my profile!
